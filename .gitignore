@@ -45,6 +45,8 @@ Assets/StreamingAssets/crashlytics-build.properties
 # private Assets
 Assets/Audio/*
 Assets/Audio.meta
+Assets/TUShooting/
+Assets/TUShooting.meta
 
 # VRC Assets
 Assets/Udon/

@@ -11,14 +11,19 @@ public class SyncTimerSystem : UdonSharpBehaviour
 
     private Text timeUpText;
 
+    [UdonSynced(UdonSyncMode.None)]
     private float totalTime;
 
+    [UdonSynced(UdonSyncMode.None)]
     private float oldSec;
 
-    private bool isTimerActive;
+    [UdonSynced(UdonSyncMode.None)]
+    public bool isTimerActive;
 
+    [UdonSynced(UdonSyncMode.None)]
     public int minutes;
     
+    [UdonSynced(UdonSyncMode.None)]
     public float seconds;
 
     public GameObject textObject;
@@ -42,8 +47,20 @@ public class SyncTimerSystem : UdonSharpBehaviour
 
     ///<summary>
     ///Button.OnClickで呼ばれる
-    ///<summary/>
+    ///</summary>
     public override void Interact()
+    {
+        if(Networking.GetOwner(this.gameObject) != Networking.LocalPlayer)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
+        }
+
+        //処理同期
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnStartTimer");
+    }
+
+
+    public void OnStartTimer()
     {
         var minAndSec = timerText.text.Split(':');
         minutes = int.Parse(minAndSec[0]);

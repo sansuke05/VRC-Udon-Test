@@ -14,70 +14,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 97528088f8d027f46b73831cafe9f418,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export minutes\r\n    .export seconds\r\n
-    \   .export textObject\r\n    .export timeUpNoticeTextObj\r\n    .export minutesSlider\r\n
-    \   .export secondsSlider\r\n    .export startButton\r\n\r\n    __refl_const_intnl_udonTypeID:
-    %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
-    \   startButton: %UnityEngineUIButton, null\r\n    textObject: %UnityEngineGameObject,
-    null\r\n    timeUpNoticeTextObj: %UnityEngineGameObject, null\r\n    minutes:
-    %SystemInt32, null\r\n    seconds: %SystemSingle, null\r\n    minutesSlider: %UnityEngineUISlider,
-    null\r\n    secondsSlider: %UnityEngineUISlider, null\r\n    isTimerActive: %SystemBoolean,
+  udonAssembly: ".data_start\r\n\r\n    .export isTimerActive\r\n    .export minutes\r\n
+    \   .export seconds\r\n    .export textObject\r\n    .export timeUpNoticeTextObj\r\n
+    \   .export minutesSlider\r\n    .export secondsSlider\r\n    .export startButton\r\n
+    \   .sync oldSec, none\r\n    .sync isTimerActive, none\r\n    .sync minutes,
+    none\r\n    .sync seconds, none\r\n\r\n    __refl_const_intnl_udonTypeID: %SystemInt64,
+    null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n    isTimerActive:
+    %SystemBoolean, null\r\n    startButton: %UnityEngineUIButton, null\r\n    textObject:
+    %UnityEngineGameObject, null\r\n    timeUpNoticeTextObj: %UnityEngineGameObject,
+    null\r\n    minutes: %SystemInt32, null\r\n    seconds: %SystemSingle, null\r\n
+    \   minutesSlider: %UnityEngineUISlider, null\r\n    secondsSlider: %UnityEngineUISlider,
     null\r\n    oldSec: %SystemSingle, null\r\n    totalTime: %SystemSingle, null\r\n
     \   timerText: %UnityEngineUIText, null\r\n    timeUpText: %UnityEngineUIText,
-    null\r\n    __0_minAndSec_StringArray: %SystemStringArray, null\r\n    __0_const_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __0_const_intnl_SystemChar: %SystemChar, null\r\n    __0_const_intnl_SystemCharArray:
-    %SystemCharArray, null\r\n    __0_const_intnl_SystemDouble: %SystemDouble, null\r\n
-    \   __0_const_intnl_SystemInt32: %SystemInt32, null\r\n    __1_const_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __2_const_intnl_SystemInt32: %SystemInt32, null\r\n
-    \   __0_const_intnl_SystemSingle: %SystemSingle, null\r\n    __0_const_intnl_SystemString:
-    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
-    \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
-    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_SystemUInt32:
-    %SystemUInt32, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    null\r\n    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject, this\r\n
+    \   __0_this_intnl_SyncTimerSystem: %VRCUdonUdonBehaviour, this\r\n    __0_minAndSec_StringArray:
+    %SystemStringArray, null\r\n    __0_const_intnl_SystemBoolean: %SystemBoolean,
+    null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_const_intnl_SystemChar:
+    %SystemChar, null\r\n    __0_const_intnl_SystemCharArray: %SystemCharArray, null\r\n
+    \   __0_const_intnl_SystemDouble: %SystemDouble, null\r\n    __0_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __2_const_intnl_SystemInt32: %SystemInt32, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget:
+    %VRCUdonCommonInterfacesNetworkEventTarget, null\r\n    __0_const_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __0_const_intnl_SystemString: %SystemString, null\r\n
+    \   __1_const_intnl_SystemString: %SystemString, null\r\n    __2_const_intnl_SystemString:
+    %SystemString, null\r\n    __3_const_intnl_SystemString: %SystemString, null\r\n
+    \   __4_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemType:
+    %SystemType, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n
+    \   __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
     \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_intnl_SystemDouble:
-    %SystemDouble, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __10_intnl_SystemInt32: %SystemInt32, null\r\n    __11_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __12_intnl_SystemInt32: %SystemInt32, null\r\n    __13_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __3_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __4_intnl_SystemInt32: %SystemInt32, null\r\n    __5_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __6_intnl_SystemInt32: %SystemInt32, null\r\n    __7_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __8_intnl_SystemInt32: %SystemInt32, null\r\n    __9_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __0_intnl_SystemSingle: %SystemSingle, null\r\n    __1_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __10_intnl_SystemSingle: %SystemSingle, null\r\n    __11_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __12_intnl_SystemSingle: %SystemSingle, null\r\n    __13_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __2_intnl_SystemSingle: %SystemSingle, null\r\n    __3_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __4_intnl_SystemSingle: %SystemSingle, null\r\n    __5_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __6_intnl_SystemSingle: %SystemSingle, null\r\n    __7_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __8_intnl_SystemSingle: %SystemSingle, null\r\n    __9_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
-    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
-    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
-    %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __0_intnl_SystemStringArray:
-    %SystemStringArray, null\r\n    __0_intnl_UnityEngineUIText: %UnityEngineUIText,
-    null\r\n    __1_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineTransform:
-    %UnityEngineTransform, null\r\n    __1_intnl_UnityEngineTransform: %UnityEngineTransform,
-    null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n
+    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __7_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __0_intnl_SystemDouble: %SystemDouble, null\r\n    __0_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32, null\r\n    __10_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __11_intnl_SystemInt32: %SystemInt32, null\r\n    __12_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __13_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __5_intnl_SystemInt32: %SystemInt32, null\r\n    __6_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __7_intnl_SystemInt32: %SystemInt32, null\r\n    __8_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __9_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __1_intnl_SystemSingle: %SystemSingle, null\r\n    __10_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __11_intnl_SystemSingle: %SystemSingle, null\r\n    __12_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __13_intnl_SystemSingle: %SystemSingle, null\r\n    __2_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __3_intnl_SystemSingle: %SystemSingle, null\r\n    __4_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __5_intnl_SystemSingle: %SystemSingle, null\r\n    __6_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __7_intnl_SystemSingle: %SystemSingle, null\r\n    __8_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __9_intnl_SystemSingle: %SystemSingle, null\r\n    __0_intnl_SystemString:
+    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_SystemString:
+    %SystemString, null\r\n    __3_intnl_SystemString: %SystemString, null\r\n    __4_intnl_SystemString:
+    %SystemString, null\r\n    __5_intnl_SystemString: %SystemString, null\r\n    __6_intnl_SystemString:
+    %SystemString, null\r\n    __0_intnl_SystemStringArray: %SystemStringArray, null\r\n
+    \   __0_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __1_intnl_UnityEngineUIText:
+    %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform,
+    null\r\n    __1_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __0_intnl_returnTarget_UInt32:
+    %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n
+    \   __2_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n
     \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
     \       \r\n         # using UnityEngine.UI;\r\n        \r\n         # using VRC.SDKBase;\r\n
     \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
     SyncTimerSystem : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
     private Text timerText;\r\n        \r\n         # private Text timeUpText;\r\n
-    \       \r\n         # private float totalTime;\r\n        \r\n         # private
-    float oldSec;\r\n        \r\n         # private bool isTimerActive;\r\n        \r\n
-    \        # public int minutes;\r\n        \r\n         # public float seconds;\r\n
-    \       \r\n         # public GameObject textObject;\r\n        \r\n         #
-    public GameObject timeUpNoticeTextObj;\r\n        \r\n         # public Slider
-    minutesSlider;\r\n        \r\n         # public Slider secondsSlider;\r\n        \r\n
-    \        # public Button startButton;\r\n        \r\n         # void Start()\r\n
-    \   .export _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
-    {\r\n        \r\n         # totalTime = minutes * 60 + seconds;\r\n        PUSH,
-    minutes\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemInt32\r\n
-    \       EXTERN, \"SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       \r\n         # private float totalTime;\r\n        \r\n         # [UdonSynced(UdonSyncMode.None)]\r\n
+    \       \r\n         # private float oldSec;\r\n        \r\n         # [UdonSynced(UdonSyncMode.None)]\r\n
+    \       \r\n         # public bool isTimerActive;\r\n        \r\n         # [UdonSynced(UdonSyncMode.None)]\r\n
+    \       \r\n         # public int minutes;\r\n        \r\n         # [UdonSynced(UdonSyncMode.None)]\r\n
+    \       \r\n         # public float seconds;\r\n        \r\n         # public
+    GameObject textObject;\r\n        \r\n         # public GameObject timeUpNoticeTextObj;\r\n
+    \       \r\n         # public Slider minutesSlider;\r\n        \r\n         #
+    public Slider secondsSlider;\r\n        \r\n         # public Button startButton;\r\n
+    \       \r\n         # void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # totalTime =
+    minutes * 60 + seconds;\r\n        PUSH, minutes\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32\"\r\n
     \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemSingle\r\n
     \       EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\r\n        PUSH,
     __0_intnl_SystemSingle\r\n        PUSH, seconds\r\n        PUSH, __1_intnl_SystemSingle\r\n
@@ -102,7 +112,27 @@ MonoBehaviour:
     \        # public override void Interact()\r\n    .export _interact\r\n        \r\n
     \   _interact:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
-    \       \r\n         # var minAndSec = timerText.text.Split(':');\r\n        PUSH,
+    \       \r\n         # if(Networking.GetOwner(this.gameObject) != Networking.LocalPlayer)\r\n
+    \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __0_this_intnl_UnityEngineGameObject\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001E0\r\n
+    \       \r\n         # {\r\n        \r\n         # Networking.SetOwner(Networking.LocalPlayer,
+    this.gameObject);\r\n        PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN,
+    \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n        PUSH,
+    __2_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_this_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid\"\r\n
+    \       \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,
+    \"OnStartTimer\");\r\n        PUSH, __0_this_intnl_SyncTimerSystem\r\n        PUSH,
+    __0_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void OnStartTimer()\r\n    .export OnStartTimer\r\n        \r\n
+    \   OnStartTimer:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # var minAndSec = timerText.text.Split(':');\r\n        PUSH,
     timerText\r\n        PUSH, __0_intnl_SystemString\r\n        EXTERN, \"UnityEngineUIText.__get_text__SystemString\"\r\n
     \       PUSH, __0_const_intnl_SystemCharArray\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
     \       PUSH, __0_const_intnl_SystemChar\r\n        EXTERN, \"SystemCharArray.__Set__SystemInt32_SystemChar__SystemVoid\"\r\n
@@ -125,19 +155,19 @@ MonoBehaviour:
     \       \r\n         # Debug.Log(seconds);\r\n        PUSH, seconds\r\n        EXTERN,
     \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
     if (minutes <= 0 && seconds <= 0.01)\r\n        PUSH, minutes\r\n        PUSH,
-    __1_const_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemBoolean\r\n        EXTERN,
+    __1_const_intnl_SystemInt32\r\n        PUSH, __2_intnl_SystemBoolean\r\n        EXTERN,
     \"SystemInt32.__op_LessThanOrEqual__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __1_intnl_SystemBoolean\r\n        PUSH, __0_intnl_SystemBoolean\r\n
-    \       COPY\r\n        PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x00000334\r\n        PUSH, seconds\r\n        PUSH, __0_intnl_SystemDouble\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        PUSH, __1_intnl_SystemBoolean\r\n
+    \       COPY\r\n        PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
+    0x000003F0\r\n        PUSH, seconds\r\n        PUSH, __0_intnl_SystemDouble\r\n
     \       EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\r\n        PUSH,
     __0_intnl_SystemDouble\r\n        PUSH, __0_const_intnl_SystemDouble\r\n        PUSH,
-    __2_intnl_SystemBoolean\r\n        EXTERN, \"SystemDouble.__op_LessThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        PUSH, __2_intnl_SystemBoolean\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        PUSH, __0_intnl_SystemBoolean\r\n
-    \       COPY\r\n        PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x0000034C\r\n        \r\n         # {\r\n        \r\n         # return;\r\n        JUMP_INDIRECT,
+    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemDouble.__op_LessThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        PUSH, __3_intnl_SystemBoolean\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        PUSH, __1_intnl_SystemBoolean\r\n
+    \       COPY\r\n        PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
+    0x00000408\r\n        \r\n         # {\r\n        \r\n         # return;\r\n        JUMP_INDIRECT,
     __0_intnl_returnTarget_UInt32\r\n        \r\n         # totalTime = minutes *
     60 + seconds;\r\n        PUSH, minutes\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
     \       PUSH, __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32\"\r\n
@@ -151,7 +181,7 @@ MonoBehaviour:
     \       PUSH, __6_intnl_SystemSingle\r\n        PUSH, oldSec\r\n        COPY\r\n
     \       \r\n         # isTimerActive = true;\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
     \       PUSH, isTimerActive\r\n        COPY\r\n        \r\n         # timeUpText.text
-    = \"\";\r\n        PUSH, timeUpText\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    = \"\";\r\n        PUSH, timeUpText\r\n        PUSH, __1_const_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
     \       \r\n         # startButton.interactable = false;\r\n        PUSH, startButton\r\n
     \       PUSH, __1_const_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineUIButton.__set_interactable__SystemBoolean__SystemVoid\"\r\n
@@ -165,12 +195,12 @@ MonoBehaviour:
     \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (totalTime
     <= 0)\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH, __7_intnl_SystemSingle\r\n
     \       EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\r\n        PUSH,
-    totalTime\r\n        PUSH, __7_intnl_SystemSingle\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    totalTime\r\n        PUSH, __7_intnl_SystemSingle\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000004C4\r\n
+    \       PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000580\r\n
     \       \r\n         # {\r\n        \r\n         # return;\r\n        JUMP_INDIRECT,
     __0_intnl_returnTarget_UInt32\r\n        \r\n         # if (isTimerActive)\r\n
-    \       PUSH, isTimerActive\r\n        JUMP_IF_FALSE, 0x00000854\r\n        \r\n
+    \       PUSH, isTimerActive\r\n        JUMP_IF_FALSE, 0x00000910\r\n        \r\n
     \        # {\r\n        \r\n         # totalTime = minutes * 60 + seconds;\r\n
     \       PUSH, minutes\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
     __3_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Multiplication__SystemInt32_SystemInt32__SystemInt32\"\r\n
@@ -205,17 +235,17 @@ MonoBehaviour:
     \       EXTERN, \"SystemConvert.__ToInt32__SystemSingle__SystemInt32\"\r\n        PUSH,
     __11_intnl_SystemInt32\r\n        PUSH, __10_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __10_intnl_SystemInt32\r\n        PUSH, __8_intnl_SystemInt32\r\n
-    \       PUSH, __5_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000079C\r\n
+    \       PUSH, __6_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __6_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000858\r\n
     \       \r\n         # {\r\n        \r\n         # timerText.text = minutes.ToString(\"00\")
     + \":\" + ((int)seconds).ToString(\"00\");\r\n        PUSH, seconds\r\n        PUSH,
     __13_intnl_SystemInt32\r\n        EXTERN, \"SystemConvert.__ToInt32__SystemSingle__SystemInt32\"\r\n
     \       PUSH, __13_intnl_SystemInt32\r\n        PUSH, __12_intnl_SystemInt32\r\n
-    \       COPY\r\n        PUSH, __12_intnl_SystemInt32\r\n        PUSH, __1_const_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __12_intnl_SystemInt32\r\n        PUSH, __2_const_intnl_SystemString\r\n
     \       PUSH, __3_intnl_SystemString\r\n        EXTERN, \"SystemInt32.__ToString__SystemString__SystemString\"\r\n
-    \       PUSH, minutes\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    \       PUSH, minutes\r\n        PUSH, __2_const_intnl_SystemString\r\n        PUSH,
     __4_intnl_SystemString\r\n        EXTERN, \"SystemInt32.__ToString__SystemString__SystemString\"\r\n
-    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __2_const_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __3_const_intnl_SystemString\r\n
     \       PUSH, __5_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __5_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n
     \       PUSH, __6_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
@@ -223,11 +253,11 @@ MonoBehaviour:
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     oldSec = seconds;\r\n        PUSH, seconds\r\n        PUSH, oldSec\r\n        COPY\r\n
     \       \r\n         # if (totalTime <= 0f)\r\n        PUSH, totalTime\r\n        PUSH,
-    __0_const_intnl_SystemSingle\r\n        PUSH, __6_intnl_SystemBoolean\r\n        EXTERN,
+    __0_const_intnl_SystemSingle\r\n        PUSH, __7_intnl_SystemBoolean\r\n        EXTERN,
     \"SystemSingle.__op_LessThanOrEqual__SystemSingle_SystemSingle__SystemBoolean\"\r\n
-    \       PUSH, __6_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000854\r\n
+    \       PUSH, __7_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000910\r\n
     \       \r\n         # {\r\n        \r\n         # timeUpText.text = \"Time Up\";\r\n
-    \       PUSH, timeUpText\r\n        PUSH, __3_const_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, timeUpText\r\n        PUSH, __4_const_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     isTimerActive = false;\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH,
     isTimerActive\r\n        COPY\r\n        \r\n         # startButton.interactable
@@ -464,1193 +494,1544 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 255
-      endSourceChar: 263
+      endSourceChar: 256
       line: 15
       lineChar: 4
-      spanCodeSection: 'private '
+      spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 263
-      endSourceChar: 263
+      startSourceChar: 256
+      endSourceChar: 267
       line: 15
+      lineChar: 5
+      spanCodeSection: UdonSynced(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 267
+      endSourceChar: 267
+      line: 15
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 267
+      endSourceChar: 280
+      line: 15
+      lineChar: 16
+      spanCodeSection: UdonSyncMode.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 280
+      endSourceChar: 280
+      line: 15
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 280
+      endSourceChar: 300
+      line: 15
+      lineChar: 29
+      spanCodeSection: "None)]\r\n    private "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 300
+      endSourceChar: 300
+      line: 16
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 263
-      endSourceChar: 284
-      line: 15
+      startSourceChar: 300
+      endSourceChar: 321
+      line: 16
       lineChar: 12
       spanCodeSection: "float oldSec;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 284
-      endSourceChar: 292
-      line: 17
+      startSourceChar: 321
+      endSourceChar: 322
+      line: 18
       lineChar: 4
-      spanCodeSection: 'private '
+      spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 292
-      endSourceChar: 292
-      line: 17
-      lineChar: 12
+      startSourceChar: 322
+      endSourceChar: 333
+      line: 18
+      lineChar: 5
+      spanCodeSection: UdonSynced(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 333
+      endSourceChar: 333
+      line: 18
+      lineChar: 16
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 292
-      endSourceChar: 319
-      line: 17
-      lineChar: 12
-      spanCodeSection: "bool isTimerActive;\r\n\r\n    "
+      startSourceChar: 333
+      endSourceChar: 346
+      line: 18
+      lineChar: 16
+      spanCodeSection: UdonSyncMode.
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 319
-      endSourceChar: 326
-      line: 19
-      lineChar: 4
-      spanCodeSection: 'public '
+      startSourceChar: 346
+      endSourceChar: 346
+      line: 18
+      lineChar: 29
+      spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 326
-      endSourceChar: 326
+      startSourceChar: 346
+      endSourceChar: 365
+      line: 18
+      lineChar: 29
+      spanCodeSection: "None)]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 365
+      endSourceChar: 365
       line: 19
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 326
-      endSourceChar: 350
+      startSourceChar: 365
+      endSourceChar: 392
       line: 19
+      lineChar: 11
+      spanCodeSection: "bool isTimerActive;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 392
+      endSourceChar: 393
+      line: 21
+      lineChar: 4
+      spanCodeSection: '['
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 393
+      endSourceChar: 404
+      line: 21
+      lineChar: 5
+      spanCodeSection: UdonSynced(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 404
+      endSourceChar: 404
+      line: 21
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 404
+      endSourceChar: 417
+      line: 21
+      lineChar: 16
+      spanCodeSection: UdonSyncMode.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 417
+      endSourceChar: 417
+      line: 21
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 417
+      endSourceChar: 436
+      line: 21
+      lineChar: 29
+      spanCodeSection: "None)]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 436
+      endSourceChar: 436
+      line: 22
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 436
+      endSourceChar: 460
+      line: 22
       lineChar: 11
       spanCodeSection: "int minutes;\r\n    \r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 350
-      endSourceChar: 357
-      line: 21
+      startSourceChar: 460
+      endSourceChar: 461
+      line: 24
       lineChar: 4
-      spanCodeSection: 'public '
+      spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 357
-      endSourceChar: 357
-      line: 21
+      startSourceChar: 461
+      endSourceChar: 472
+      line: 24
+      lineChar: 5
+      spanCodeSection: UdonSynced(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 472
+      endSourceChar: 472
+      line: 24
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 472
+      endSourceChar: 485
+      line: 24
+      lineChar: 16
+      spanCodeSection: UdonSyncMode.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 485
+      endSourceChar: 485
+      line: 24
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 485
+      endSourceChar: 504
+      line: 24
+      lineChar: 29
+      spanCodeSection: "None)]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 504
+      endSourceChar: 504
+      line: 25
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 357
-      endSourceChar: 379
-      line: 21
+      startSourceChar: 504
+      endSourceChar: 526
+      line: 25
       lineChar: 11
       spanCodeSection: "float seconds;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 379
-      endSourceChar: 386
-      line: 23
+      startSourceChar: 526
+      endSourceChar: 533
+      line: 27
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 386
-      endSourceChar: 386
-      line: 23
+      startSourceChar: 533
+      endSourceChar: 533
+      line: 27
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 386
-      endSourceChar: 416
-      line: 23
+      startSourceChar: 533
+      endSourceChar: 563
+      line: 27
       lineChar: 11
       spanCodeSection: "GameObject textObject;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 416
-      endSourceChar: 423
-      line: 25
+      startSourceChar: 563
+      endSourceChar: 570
+      line: 29
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 423
-      endSourceChar: 423
-      line: 25
+      startSourceChar: 570
+      endSourceChar: 570
+      line: 29
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 423
-      endSourceChar: 462
-      line: 25
+      startSourceChar: 570
+      endSourceChar: 609
+      line: 29
       lineChar: 11
       spanCodeSection: "GameObject timeUpNoticeTextObj;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 462
-      endSourceChar: 469
-      line: 27
+      startSourceChar: 609
+      endSourceChar: 616
+      line: 31
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 469
-      endSourceChar: 469
-      line: 27
+      startSourceChar: 616
+      endSourceChar: 616
+      line: 31
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 469
-      endSourceChar: 498
-      line: 27
+      startSourceChar: 616
+      endSourceChar: 645
+      line: 31
       lineChar: 11
       spanCodeSection: "Slider minutesSlider;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 498
-      endSourceChar: 505
-      line: 29
+      startSourceChar: 645
+      endSourceChar: 652
+      line: 33
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 505
-      endSourceChar: 505
-      line: 29
+      startSourceChar: 652
+      endSourceChar: 652
+      line: 33
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 505
-      endSourceChar: 534
-      line: 29
+      startSourceChar: 652
+      endSourceChar: 681
+      line: 33
       lineChar: 11
       spanCodeSection: "Slider secondsSlider;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 534
-      endSourceChar: 541
-      line: 31
+      startSourceChar: 681
+      endSourceChar: 688
+      line: 35
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 541
-      endSourceChar: 541
-      line: 31
+      startSourceChar: 688
+      endSourceChar: 688
+      line: 35
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 541
-      endSourceChar: 568
-      line: 31
+      startSourceChar: 688
+      endSourceChar: 715
+      line: 35
       lineChar: 11
       spanCodeSection: "Button startButton;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 19
-      startSourceChar: 568
-      endSourceChar: 586
-      line: 33
+      startSourceChar: 715
+      endSourceChar: 733
+      line: 37
       lineChar: 4
       spanCodeSection: "void Start()\r\n    "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 586
-      endSourceChar: 597
-      line: 34
+      startSourceChar: 733
+      endSourceChar: 744
+      line: 38
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 597
-      endSourceChar: 597
-      line: 35
+      startSourceChar: 744
+      endSourceChar: 744
+      line: 39
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 597
-      endSourceChar: 609
-      line: 35
+      startSourceChar: 744
+      endSourceChar: 756
+      line: 39
       lineChar: 8
       spanCodeSection: 'totalTime = '
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 609
-      endSourceChar: 624
-      line: 35
+      startSourceChar: 756
+      endSourceChar: 771
+      line: 39
       lineChar: 20
       spanCodeSection: 'minutes * 60 + '
     - startInstruction: 20
       endInstruction: 127
-      startSourceChar: 624
-      endSourceChar: 642
-      line: 35
+      startSourceChar: 771
+      endSourceChar: 789
+      line: 39
       lineChar: 35
       spanCodeSection: "seconds;\r\n        "
     - startInstruction: 128
       endInstruction: 127
-      startSourceChar: 642
-      endSourceChar: 642
-      line: 36
+      startSourceChar: 789
+      endSourceChar: 789
+      line: 40
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 128
       endInstruction: 127
-      startSourceChar: 642
-      endSourceChar: 651
-      line: 36
+      startSourceChar: 789
+      endSourceChar: 798
+      line: 40
       lineChar: 8
       spanCodeSection: 'oldSec = '
     - startInstruction: 128
       endInstruction: 171
-      startSourceChar: 651
-      endSourceChar: 663
-      line: 36
+      startSourceChar: 798
+      endSourceChar: 810
+      line: 40
       lineChar: 17
       spanCodeSection: "0;\r\n        "
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 663
-      endSourceChar: 663
-      line: 37
+      startSourceChar: 810
+      endSourceChar: 810
+      line: 41
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 663
-      endSourceChar: 675
-      line: 37
+      startSourceChar: 810
+      endSourceChar: 822
+      line: 41
       lineChar: 8
       spanCodeSection: 'timerText = '
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 675
-      endSourceChar: 675
-      line: 37
+      startSourceChar: 822
+      endSourceChar: 822
+      line: 41
       lineChar: 20
       spanCodeSection: 
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 675
-      endSourceChar: 675
-      line: 37
+      startSourceChar: 822
+      endSourceChar: 822
+      line: 41
       lineChar: 20
       spanCodeSection: 
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 675
-      endSourceChar: 686
-      line: 37
+      startSourceChar: 822
+      endSourceChar: 833
+      line: 41
       lineChar: 20
       spanCodeSection: textObject.
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 686
-      endSourceChar: 698
-      line: 37
+      startSourceChar: 833
+      endSourceChar: 845
+      line: 41
       lineChar: 31
       spanCodeSection: GetComponent
     - startInstruction: 172
       endInstruction: 171
-      startSourceChar: 698
-      endSourceChar: 699
-      line: 37
+      startSourceChar: 845
+      endSourceChar: 846
+      line: 41
       lineChar: 43
       spanCodeSection: <
     - startInstruction: 172
       endInstruction: 247
-      startSourceChar: 699
-      endSourceChar: 717
-      line: 37
+      startSourceChar: 846
+      endSourceChar: 864
+      line: 41
       lineChar: 44
       spanCodeSection: "Text>();\r\n        "
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 717
-      endSourceChar: 717
-      line: 38
+      startSourceChar: 864
+      endSourceChar: 864
+      line: 42
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 717
-      endSourceChar: 730
-      line: 38
+      startSourceChar: 864
+      endSourceChar: 877
+      line: 42
       lineChar: 8
       spanCodeSection: 'timeUpText = '
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 730
-      endSourceChar: 730
-      line: 38
+      startSourceChar: 877
+      endSourceChar: 877
+      line: 42
       lineChar: 21
       spanCodeSection: 
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 730
-      endSourceChar: 730
-      line: 38
+      startSourceChar: 877
+      endSourceChar: 877
+      line: 42
       lineChar: 21
       spanCodeSection: 
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 730
-      endSourceChar: 750
-      line: 38
+      startSourceChar: 877
+      endSourceChar: 897
+      line: 42
       lineChar: 21
       spanCodeSection: timeUpNoticeTextObj.
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 750
-      endSourceChar: 762
-      line: 38
+      startSourceChar: 897
+      endSourceChar: 909
+      line: 42
       lineChar: 41
       spanCodeSection: GetComponent
     - startInstruction: 248
       endInstruction: 247
-      startSourceChar: 762
-      endSourceChar: 763
-      line: 38
+      startSourceChar: 909
+      endSourceChar: 910
+      line: 42
       lineChar: 53
       spanCodeSection: <
     - startInstruction: 248
       endInstruction: 331
-      startSourceChar: 763
-      endSourceChar: 853
-      line: 38
+      startSourceChar: 910
+      endSourceChar: 1000
+      line: 42
       lineChar: 54
       spanCodeSection: "Text>();\r\n    }\r\n\r\n\r\n    ///<summary>\r\n    ///Button.OnClick\u3067\u547C\u3070\u308C\u308B\r\n
-        \   ///<summary/>\r\n    "
+        \   ///</summary>\r\n    "
     - startInstruction: 332
       endInstruction: 351
-      startSourceChar: 853
-      endSourceChar: 890
-      line: 45
+      startSourceChar: 1000
+      endSourceChar: 1037
+      line: 49
       lineChar: 4
       spanCodeSection: "public override void Interact()\r\n    "
     - startInstruction: 352
       endInstruction: 351
-      startSourceChar: 890
-      endSourceChar: 901
-      line: 46
+      startSourceChar: 1037
+      endSourceChar: 1048
+      line: 50
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 352
       endInstruction: 351
-      startSourceChar: 901
-      endSourceChar: 901
-      line: 47
+      startSourceChar: 1048
+      endSourceChar: 1051
+      line: 51
       lineChar: 8
+      spanCodeSection: if(
+    - startInstruction: 352
+      endInstruction: 351
+      startSourceChar: 1051
+      endSourceChar: 1091
+      line: 51
+      lineChar: 11
+      spanCodeSection: 'Networking.GetOwner(this.gameObject) != '
+    - startInstruction: 352
+      endInstruction: 351
+      startSourceChar: 1091
+      endSourceChar: 1091
+      line: 51
+      lineChar: 51
       spanCodeSection: 
     - startInstruction: 352
       endInstruction: 351
-      startSourceChar: 901
-      endSourceChar: 901
-      line: 47
+      startSourceChar: 1091
+      endSourceChar: 1102
+      line: 51
+      lineChar: 51
+      spanCodeSection: Networking.
+    - startInstruction: 352
+      endInstruction: 439
+      startSourceChar: 1102
+      endSourceChar: 1124
+      line: 51
+      lineChar: 62
+      spanCodeSection: "LocalPlayer)\r\n        "
+    - startInstruction: 440
+      endInstruction: 439
+      startSourceChar: 1124
+      endSourceChar: 1139
+      line: 52
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 440
+      endInstruction: 439
+      startSourceChar: 1139
+      endSourceChar: 1139
+      line: 53
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 440
+      endInstruction: 439
+      startSourceChar: 1139
+      endSourceChar: 1159
+      line: 53
+      lineChar: 12
+      spanCodeSection: Networking.SetOwner(
+    - startInstruction: 440
+      endInstruction: 439
+      startSourceChar: 1159
+      endSourceChar: 1159
+      line: 53
+      lineChar: 32
+      spanCodeSection: 
+    - startInstruction: 440
+      endInstruction: 439
+      startSourceChar: 1159
+      endSourceChar: 1170
+      line: 53
+      lineChar: 32
+      spanCodeSection: Networking.
+    - startInstruction: 440
+      endInstruction: 455
+      startSourceChar: 1170
+      endSourceChar: 1183
+      line: 53
+      lineChar: 43
+      spanCodeSection: 'LocalPlayer, '
+    - startInstruction: 456
+      endInstruction: 455
+      startSourceChar: 1183
+      endSourceChar: 1183
+      line: 53
+      lineChar: 56
+      spanCodeSection: 
+    - startInstruction: 456
+      endInstruction: 455
+      startSourceChar: 1183
+      endSourceChar: 1188
+      line: 53
+      lineChar: 56
+      spanCodeSection: this.
+    - startInstruction: 456
+      endInstruction: 479
+      startSourceChar: 1188
+      endSourceChar: 1239
+      line: 53
+      lineChar: 61
+      spanCodeSection: "gameObject);\r\n        }\r\n\r\n        //\u51E6\u7406\u540C\u671F\r\n
+        \       "
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1239
+      endSourceChar: 1239
+      line: 57
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 352
-      endInstruction: 351
-      startSourceChar: 901
-      endSourceChar: 915
-      line: 47
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1239
+      endSourceChar: 1262
+      line: 57
+      lineChar: 8
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1262
+      line: 57
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1262
+      line: 57
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1262
+      line: 57
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1262
+      line: 57
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1262
+      line: 57
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1262
+      endSourceChar: 1266
+      line: 57
+      lineChar: 31
+      spanCodeSection: VRC.
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1266
+      endSourceChar: 1271
+      line: 57
+      lineChar: 35
+      spanCodeSection: Udon.
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1271
+      endSourceChar: 1278
+      line: 57
+      lineChar: 40
+      spanCodeSection: Common.
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1278
+      endSourceChar: 1289
+      line: 57
+      lineChar: 47
+      spanCodeSection: Interfaces.
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1289
+      endSourceChar: 1308
+      line: 57
+      lineChar: 58
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 480
+      endInstruction: 479
+      startSourceChar: 1308
+      endSourceChar: 1313
+      line: 57
+      lineChar: 77
+      spanCodeSection: 'All, '
+    - startInstruction: 480
+      endInstruction: 519
+      startSourceChar: 1313
+      endSourceChar: 1346
+      line: 57
+      lineChar: 82
+      spanCodeSection: "\"OnStartTimer\");\r\n    }\r\n\r\n\r\n    "
+    - startInstruction: 520
+      endInstruction: 539
+      startSourceChar: 1346
+      endSourceChar: 1378
+      line: 61
+      lineChar: 4
+      spanCodeSection: "public void OnStartTimer()\r\n    "
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1378
+      endSourceChar: 1389
+      line: 62
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1389
+      endSourceChar: 1389
+      line: 63
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1389
+      endSourceChar: 1389
+      line: 63
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1389
+      endSourceChar: 1403
+      line: 63
       lineChar: 8
       spanCodeSection: 'var minAndSec '
-    - startInstruction: 352
-      endInstruction: 351
-      startSourceChar: 915
-      endSourceChar: 917
-      line: 47
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1403
+      endSourceChar: 1405
+      line: 63
       lineChar: 22
       spanCodeSection: '= '
-    - startInstruction: 352
-      endInstruction: 351
-      startSourceChar: 917
-      endSourceChar: 938
-      line: 47
+    - startInstruction: 540
+      endInstruction: 539
+      startSourceChar: 1405
+      endSourceChar: 1426
+      line: 63
       lineChar: 24
       spanCodeSection: timerText.text.Split(
-    - startInstruction: 352
-      endInstruction: 459
-      startSourceChar: 938
-      endSourceChar: 953
-      line: 47
+    - startInstruction: 540
+      endInstruction: 647
+      startSourceChar: 1426
+      endSourceChar: 1441
+      line: 63
       lineChar: 45
       spanCodeSection: "':');\r\n        "
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 953
-      endSourceChar: 953
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1441
+      endSourceChar: 1441
+      line: 64
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 953
-      endSourceChar: 963
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1441
+      endSourceChar: 1451
+      line: 64
       lineChar: 8
       spanCodeSection: 'minutes = '
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 963
-      endSourceChar: 973
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1451
+      endSourceChar: 1461
+      line: 64
       lineChar: 18
       spanCodeSection: int.Parse(
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 973
-      endSourceChar: 973
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1461
+      endSourceChar: 1461
+      line: 64
       lineChar: 28
       spanCodeSection: 
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 973
-      endSourceChar: 983
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1461
+      endSourceChar: 1471
+      line: 64
       lineChar: 28
       spanCodeSection: minAndSec[
-    - startInstruction: 460
-      endInstruction: 459
-      startSourceChar: 983
-      endSourceChar: 983
-      line: 48
+    - startInstruction: 648
+      endInstruction: 647
+      startSourceChar: 1471
+      endSourceChar: 1471
+      line: 64
       lineChar: 38
       spanCodeSection: 
-    - startInstruction: 460
-      endInstruction: 535
-      startSourceChar: 983
-      endSourceChar: 997
-      line: 48
+    - startInstruction: 648
+      endInstruction: 723
+      startSourceChar: 1471
+      endSourceChar: 1485
+      line: 64
       lineChar: 38
       spanCodeSection: "0]);\r\n        "
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 997
-      endSourceChar: 997
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1485
+      endSourceChar: 1485
+      line: 65
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 997
-      endSourceChar: 1007
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1485
+      endSourceChar: 1495
+      line: 65
       lineChar: 8
       spanCodeSection: 'seconds = '
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 1007
-      endSourceChar: 1019
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1495
+      endSourceChar: 1507
+      line: 65
       lineChar: 18
       spanCodeSection: float.Parse(
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 1019
-      endSourceChar: 1019
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1507
+      endSourceChar: 1507
+      line: 65
       lineChar: 30
       spanCodeSection: 
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 1019
-      endSourceChar: 1029
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1507
+      endSourceChar: 1517
+      line: 65
       lineChar: 30
       spanCodeSection: minAndSec[
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 1029
-      endSourceChar: 1029
-      line: 49
+    - startInstruction: 724
+      endInstruction: 723
+      startSourceChar: 1517
+      endSourceChar: 1517
+      line: 65
       lineChar: 40
       spanCodeSection: 
-    - startInstruction: 536
-      endInstruction: 611
-      startSourceChar: 1029
-      endSourceChar: 1043
-      line: 49
+    - startInstruction: 724
+      endInstruction: 799
+      startSourceChar: 1517
+      endSourceChar: 1531
+      line: 65
       lineChar: 40
       spanCodeSection: "1]);\r\n        "
-    - startInstruction: 612
-      endInstruction: 611
-      startSourceChar: 1043
-      endSourceChar: 1043
-      line: 50
+    - startInstruction: 800
+      endInstruction: 799
+      startSourceChar: 1531
+      endSourceChar: 1531
+      line: 66
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 612
-      endInstruction: 611
-      startSourceChar: 1043
-      endSourceChar: 1053
-      line: 50
+    - startInstruction: 800
+      endInstruction: 799
+      startSourceChar: 1531
+      endSourceChar: 1541
+      line: 66
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 612
-      endInstruction: 627
-      startSourceChar: 1053
-      endSourceChar: 1072
-      line: 50
+    - startInstruction: 800
+      endInstruction: 815
+      startSourceChar: 1541
+      endSourceChar: 1560
+      line: 66
       lineChar: 18
       spanCodeSection: "minutes);\r\n        "
-    - startInstruction: 628
-      endInstruction: 627
-      startSourceChar: 1072
-      endSourceChar: 1072
-      line: 51
+    - startInstruction: 816
+      endInstruction: 815
+      startSourceChar: 1560
+      endSourceChar: 1560
+      line: 67
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 628
-      endInstruction: 627
-      startSourceChar: 1072
-      endSourceChar: 1082
-      line: 51
+    - startInstruction: 816
+      endInstruction: 815
+      startSourceChar: 1560
+      endSourceChar: 1570
+      line: 67
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 628
-      endInstruction: 643
-      startSourceChar: 1082
-      endSourceChar: 1103
-      line: 51
+    - startInstruction: 816
+      endInstruction: 831
+      startSourceChar: 1570
+      endSourceChar: 1591
+      line: 67
       lineChar: 18
       spanCodeSection: "seconds);\r\n\r\n        "
-    - startInstruction: 644
-      endInstruction: 643
-      startSourceChar: 1103
-      endSourceChar: 1107
-      line: 53
+    - startInstruction: 832
+      endInstruction: 831
+      startSourceChar: 1591
+      endSourceChar: 1595
+      line: 69
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 644
-      endInstruction: 643
-      startSourceChar: 1107
-      endSourceChar: 1107
-      line: 53
+    - startInstruction: 832
+      endInstruction: 831
+      startSourceChar: 1595
+      endSourceChar: 1595
+      line: 69
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 644
-      endInstruction: 643
-      startSourceChar: 1107
-      endSourceChar: 1118
-      line: 53
+    - startInstruction: 832
+      endInstruction: 831
+      startSourceChar: 1595
+      endSourceChar: 1606
+      line: 69
       lineChar: 12
       spanCodeSection: 'minutes <= '
-    - startInstruction: 644
-      endInstruction: 711
-      startSourceChar: 1118
-      endSourceChar: 1123
-      line: 53
+    - startInstruction: 832
+      endInstruction: 899
+      startSourceChar: 1606
+      endSourceChar: 1611
+      line: 69
       lineChar: 23
       spanCodeSection: '0 && '
-    - startInstruction: 712
-      endInstruction: 711
-      startSourceChar: 1123
-      endSourceChar: 1134
-      line: 53
+    - startInstruction: 900
+      endInstruction: 899
+      startSourceChar: 1611
+      endSourceChar: 1622
+      line: 69
       lineChar: 28
       spanCodeSection: 'seconds <= '
-    - startInstruction: 712
-      endInstruction: 835
-      startSourceChar: 1134
-      endSourceChar: 1149
-      line: 53
+    - startInstruction: 900
+      endInstruction: 1023
+      startSourceChar: 1622
+      endSourceChar: 1637
+      line: 69
       lineChar: 39
       spanCodeSection: "0.01)\r\n        "
-    - startInstruction: 836
-      endInstruction: 835
-      startSourceChar: 1149
-      endSourceChar: 1164
-      line: 54
+    - startInstruction: 1024
+      endInstruction: 1023
+      startSourceChar: 1637
+      endSourceChar: 1652
+      line: 70
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 836
-      endInstruction: 843
-      startSourceChar: 1164
-      endSourceChar: 1194
-      line: 55
+    - startInstruction: 1024
+      endInstruction: 1031
+      startSourceChar: 1652
+      endSourceChar: 1682
+      line: 71
       lineChar: 12
       spanCodeSection: "return;\r\n        }\r\n\r\n        "
-    - startInstruction: 844
-      endInstruction: 843
-      startSourceChar: 1194
-      endSourceChar: 1194
-      line: 58
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 844
-      endInstruction: 843
-      startSourceChar: 1194
-      endSourceChar: 1206
-      line: 58
-      lineChar: 8
-      spanCodeSection: 'totalTime = '
-    - startInstruction: 844
-      endInstruction: 843
-      startSourceChar: 1206
-      endSourceChar: 1221
-      line: 58
-      lineChar: 20
-      spanCodeSection: 'minutes * 60 + '
-    - startInstruction: 844
-      endInstruction: 951
-      startSourceChar: 1221
-      endSourceChar: 1239
-      line: 58
-      lineChar: 35
-      spanCodeSection: "seconds;\r\n        "
-    - startInstruction: 952
-      endInstruction: 951
-      startSourceChar: 1239
-      endSourceChar: 1239
-      line: 59
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 952
-      endInstruction: 951
-      startSourceChar: 1239
-      endSourceChar: 1248
-      line: 59
-      lineChar: 8
-      spanCodeSection: 'oldSec = '
-    - startInstruction: 952
-      endInstruction: 995
-      startSourceChar: 1248
-      endSourceChar: 1262
-      line: 59
-      lineChar: 17
-      spanCodeSection: "0;\r\n\r\n        "
-    - startInstruction: 996
-      endInstruction: 995
-      startSourceChar: 1262
-      endSourceChar: 1262
-      line: 61
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 996
-      endInstruction: 995
-      startSourceChar: 1262
-      endSourceChar: 1278
-      line: 61
-      lineChar: 8
-      spanCodeSection: 'isTimerActive = '
-    - startInstruction: 996
-      endInstruction: 1015
-      startSourceChar: 1278
-      endSourceChar: 1312
-      line: 61
-      lineChar: 24
-      spanCodeSection: "true;\r\n\r\n        // UI\u66F4\u65B0\r\n        "
-    - startInstruction: 1016
-      endInstruction: 1015
-      startSourceChar: 1312
-      endSourceChar: 1312
-      line: 64
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1016
-      endInstruction: 1015
-      startSourceChar: 1312
-      endSourceChar: 1330
-      line: 64
-      lineChar: 8
-      spanCodeSection: 'timeUpText.text = '
-    - startInstruction: 1016
-      endInstruction: 1039
-      startSourceChar: 1330
-      endSourceChar: 1343
-      line: 64
-      lineChar: 26
-      spanCodeSection: "\"\";\r\n        "
-    - startInstruction: 1040
-      endInstruction: 1039
-      startSourceChar: 1343
-      endSourceChar: 1343
-      line: 65
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1040
-      endInstruction: 1039
-      startSourceChar: 1343
-      endSourceChar: 1370
-      line: 65
-      lineChar: 8
-      spanCodeSection: 'startButton.interactable = '
-    - startInstruction: 1040
-      endInstruction: 1063
-      startSourceChar: 1370
-      endSourceChar: 1386
-      line: 65
-      lineChar: 35
-      spanCodeSection: "false;\r\n        "
-    - startInstruction: 1064
-      endInstruction: 1063
-      startSourceChar: 1386
-      endSourceChar: 1386
-      line: 66
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1064
-      endInstruction: 1063
-      startSourceChar: 1386
-      endSourceChar: 1415
-      line: 66
-      lineChar: 8
-      spanCodeSection: 'minutesSlider.interactable = '
-    - startInstruction: 1064
-      endInstruction: 1087
-      startSourceChar: 1415
-      endSourceChar: 1431
-      line: 66
-      lineChar: 37
-      spanCodeSection: "false;\r\n        "
-    - startInstruction: 1088
-      endInstruction: 1087
-      startSourceChar: 1431
-      endSourceChar: 1431
-      line: 67
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1088
-      endInstruction: 1087
-      startSourceChar: 1431
-      endSourceChar: 1460
-      line: 67
-      lineChar: 8
-      spanCodeSection: 'secondsSlider.interactable = '
-    - startInstruction: 1088
-      endInstruction: 1119
-      startSourceChar: 1460
-      endSourceChar: 1483
-      line: 67
-      lineChar: 37
-      spanCodeSection: "false;\r\n    }\r\n\r\n\r\n    "
-    - startInstruction: 1120
-      endInstruction: 1139
-      startSourceChar: 1483
-      endSourceChar: 1502
-      line: 71
-      lineChar: 4
-      spanCodeSection: "void Update()\r\n    "
-    - startInstruction: 1140
-      endInstruction: 1139
-      startSourceChar: 1502
-      endSourceChar: 1513
-      line: 72
-      lineChar: 4
-      spanCodeSection: "{\r\n        "
-    - startInstruction: 1140
-      endInstruction: 1139
-      startSourceChar: 1513
-      endSourceChar: 1517
-      line: 73
-      lineChar: 8
-      spanCodeSection: if (
-    - startInstruction: 1140
-      endInstruction: 1139
-      startSourceChar: 1517
-      endSourceChar: 1530
-      line: 73
-      lineChar: 12
-      spanCodeSection: 'totalTime <= '
-    - startInstruction: 1140
-      endInstruction: 1211
-      startSourceChar: 1530
-      endSourceChar: 1542
-      line: 73
-      lineChar: 25
-      spanCodeSection: "0)\r\n        "
-    - startInstruction: 1212
-      endInstruction: 1211
-      startSourceChar: 1542
-      endSourceChar: 1557
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1682
+      endSourceChar: 1682
       line: 74
       lineChar: 8
-      spanCodeSection: "{\r\n            "
-    - startInstruction: 1212
-      endInstruction: 1219
-      startSourceChar: 1557
-      endSourceChar: 1587
+      spanCodeSection: 
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1682
+      endSourceChar: 1694
+      line: 74
+      lineChar: 8
+      spanCodeSection: 'totalTime = '
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1694
+      endSourceChar: 1709
+      line: 74
+      lineChar: 20
+      spanCodeSection: 'minutes * 60 + '
+    - startInstruction: 1032
+      endInstruction: 1139
+      startSourceChar: 1709
+      endSourceChar: 1727
+      line: 74
+      lineChar: 35
+      spanCodeSection: "seconds;\r\n        "
+    - startInstruction: 1140
+      endInstruction: 1139
+      startSourceChar: 1727
+      endSourceChar: 1727
       line: 75
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1140
+      endInstruction: 1139
+      startSourceChar: 1727
+      endSourceChar: 1736
+      line: 75
+      lineChar: 8
+      spanCodeSection: 'oldSec = '
+    - startInstruction: 1140
+      endInstruction: 1183
+      startSourceChar: 1736
+      endSourceChar: 1750
+      line: 75
+      lineChar: 17
+      spanCodeSection: "0;\r\n\r\n        "
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1750
+      endSourceChar: 1750
+      line: 77
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1750
+      endSourceChar: 1766
+      line: 77
+      lineChar: 8
+      spanCodeSection: 'isTimerActive = '
+    - startInstruction: 1184
+      endInstruction: 1203
+      startSourceChar: 1766
+      endSourceChar: 1800
+      line: 77
+      lineChar: 24
+      spanCodeSection: "true;\r\n\r\n        // UI\u66F4\u65B0\r\n        "
+    - startInstruction: 1204
+      endInstruction: 1203
+      startSourceChar: 1800
+      endSourceChar: 1800
+      line: 80
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1204
+      endInstruction: 1203
+      startSourceChar: 1800
+      endSourceChar: 1818
+      line: 80
+      lineChar: 8
+      spanCodeSection: 'timeUpText.text = '
+    - startInstruction: 1204
+      endInstruction: 1227
+      startSourceChar: 1818
+      endSourceChar: 1831
+      line: 80
+      lineChar: 26
+      spanCodeSection: "\"\";\r\n        "
+    - startInstruction: 1228
+      endInstruction: 1227
+      startSourceChar: 1831
+      endSourceChar: 1831
+      line: 81
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1228
+      endInstruction: 1227
+      startSourceChar: 1831
+      endSourceChar: 1858
+      line: 81
+      lineChar: 8
+      spanCodeSection: 'startButton.interactable = '
+    - startInstruction: 1228
+      endInstruction: 1251
+      startSourceChar: 1858
+      endSourceChar: 1874
+      line: 81
+      lineChar: 35
+      spanCodeSection: "false;\r\n        "
+    - startInstruction: 1252
+      endInstruction: 1251
+      startSourceChar: 1874
+      endSourceChar: 1874
+      line: 82
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1252
+      endInstruction: 1251
+      startSourceChar: 1874
+      endSourceChar: 1903
+      line: 82
+      lineChar: 8
+      spanCodeSection: 'minutesSlider.interactable = '
+    - startInstruction: 1252
+      endInstruction: 1275
+      startSourceChar: 1903
+      endSourceChar: 1919
+      line: 82
+      lineChar: 37
+      spanCodeSection: "false;\r\n        "
+    - startInstruction: 1276
+      endInstruction: 1275
+      startSourceChar: 1919
+      endSourceChar: 1919
+      line: 83
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1276
+      endInstruction: 1275
+      startSourceChar: 1919
+      endSourceChar: 1948
+      line: 83
+      lineChar: 8
+      spanCodeSection: 'secondsSlider.interactable = '
+    - startInstruction: 1276
+      endInstruction: 1307
+      startSourceChar: 1948
+      endSourceChar: 1971
+      line: 83
+      lineChar: 37
+      spanCodeSection: "false;\r\n    }\r\n\r\n\r\n    "
+    - startInstruction: 1308
+      endInstruction: 1327
+      startSourceChar: 1971
+      endSourceChar: 1990
+      line: 87
+      lineChar: 4
+      spanCodeSection: "void Update()\r\n    "
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1990
+      endSourceChar: 2001
+      line: 88
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 2001
+      endSourceChar: 2005
+      line: 89
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 2005
+      endSourceChar: 2018
+      line: 89
+      lineChar: 12
+      spanCodeSection: 'totalTime <= '
+    - startInstruction: 1328
+      endInstruction: 1399
+      startSourceChar: 2018
+      endSourceChar: 2030
+      line: 89
+      lineChar: 25
+      spanCodeSection: "0)\r\n        "
+    - startInstruction: 1400
+      endInstruction: 1399
+      startSourceChar: 2030
+      endSourceChar: 2045
+      line: 90
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1400
+      endInstruction: 1407
+      startSourceChar: 2045
+      endSourceChar: 2075
+      line: 91
       lineChar: 12
       spanCodeSection: "return;\r\n        }\r\n\r\n        "
-    - startInstruction: 1220
-      endInstruction: 1219
-      startSourceChar: 1587
-      endSourceChar: 1591
-      line: 78
+    - startInstruction: 1408
+      endInstruction: 1407
+      startSourceChar: 2075
+      endSourceChar: 2079
+      line: 94
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 1220
-      endInstruction: 1235
-      startSourceChar: 1591
-      endSourceChar: 1615
-      line: 78
+    - startInstruction: 1408
+      endInstruction: 1423
+      startSourceChar: 2079
+      endSourceChar: 2103
+      line: 94
       lineChar: 12
       spanCodeSection: "isTimerActive)\r\n        "
-    - startInstruction: 1236
-      endInstruction: 1235
-      startSourceChar: 1615
-      endSourceChar: 1630
-      line: 79
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 2103
+      endSourceChar: 2118
+      line: 95
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1236
-      endInstruction: 1235
-      startSourceChar: 1630
-      endSourceChar: 1630
-      line: 80
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 2118
+      endSourceChar: 2118
+      line: 96
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1236
-      endInstruction: 1235
-      startSourceChar: 1630
-      endSourceChar: 1642
-      line: 80
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 2118
+      endSourceChar: 2130
+      line: 96
       lineChar: 12
       spanCodeSection: 'totalTime = '
-    - startInstruction: 1236
-      endInstruction: 1235
-      startSourceChar: 1642
-      endSourceChar: 1657
-      line: 80
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 2130
+      endSourceChar: 2145
+      line: 96
       lineChar: 24
       spanCodeSection: 'minutes * 60 + '
-    - startInstruction: 1236
-      endInstruction: 1343
-      startSourceChar: 1657
-      endSourceChar: 1679
-      line: 80
+    - startInstruction: 1424
+      endInstruction: 1531
+      startSourceChar: 2145
+      endSourceChar: 2167
+      line: 96
       lineChar: 39
       spanCodeSection: "seconds;\r\n            "
-    - startInstruction: 1344
-      endInstruction: 1343
-      startSourceChar: 1679
-      endSourceChar: 1679
-      line: 81
+    - startInstruction: 1532
+      endInstruction: 1531
+      startSourceChar: 2167
+      endSourceChar: 2167
+      line: 97
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1344
-      endInstruction: 1343
-      startSourceChar: 1679
-      endSourceChar: 1692
-      line: 81
+    - startInstruction: 1532
+      endInstruction: 1531
+      startSourceChar: 2167
+      endSourceChar: 2180
+      line: 97
       lineChar: 12
       spanCodeSection: 'totalTime -= '
-    - startInstruction: 1344
-      endInstruction: 1343
-      startSourceChar: 1692
-      endSourceChar: 1692
-      line: 81
+    - startInstruction: 1532
+      endInstruction: 1531
+      startSourceChar: 2180
+      endSourceChar: 2180
+      line: 97
       lineChar: 25
       spanCodeSection: 
-    - startInstruction: 1344
-      endInstruction: 1343
-      startSourceChar: 1692
-      endSourceChar: 1697
-      line: 81
+    - startInstruction: 1532
+      endInstruction: 1531
+      startSourceChar: 2180
+      endSourceChar: 2185
+      line: 97
       lineChar: 25
       spanCodeSection: Time.
-    - startInstruction: 1344
-      endInstruction: 1411
-      startSourceChar: 1697
-      endSourceChar: 1723
-      line: 81
+    - startInstruction: 1532
+      endInstruction: 1599
+      startSourceChar: 2185
+      endSourceChar: 2211
+      line: 97
       lineChar: 30
       spanCodeSection: "deltaTime;\r\n\r\n            "
-    - startInstruction: 1412
-      endInstruction: 1411
-      startSourceChar: 1723
-      endSourceChar: 1723
-      line: 83
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 2211
+      endSourceChar: 2211
+      line: 99
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1412
-      endInstruction: 1411
-      startSourceChar: 1723
-      endSourceChar: 1733
-      line: 83
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 2211
+      endSourceChar: 2221
+      line: 99
       lineChar: 12
       spanCodeSection: 'minutes = '
-    - startInstruction: 1412
-      endInstruction: 1411
-      startSourceChar: 1733
-      endSourceChar: 1750
-      line: 83
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 2221
+      endSourceChar: 2238
+      line: 99
       lineChar: 22
       spanCodeSection: '(int)totalTime / '
-    - startInstruction: 1412
-      endInstruction: 1507
-      startSourceChar: 1750
-      endSourceChar: 1767
-      line: 83
+    - startInstruction: 1600
+      endInstruction: 1695
+      startSourceChar: 2238
+      endSourceChar: 2255
+      line: 99
       lineChar: 39
       spanCodeSection: "60;\r\n            "
-    - startInstruction: 1508
-      endInstruction: 1507
-      startSourceChar: 1767
-      endSourceChar: 1767
-      line: 84
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2255
+      endSourceChar: 2255
+      line: 100
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1508
-      endInstruction: 1507
-      startSourceChar: 1767
-      endSourceChar: 1777
-      line: 84
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2255
+      endSourceChar: 2265
+      line: 100
       lineChar: 12
       spanCodeSection: 'seconds = '
-    - startInstruction: 1508
-      endInstruction: 1507
-      startSourceChar: 1777
-      endSourceChar: 1789
-      line: 84
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2265
+      endSourceChar: 2277
+      line: 100
       lineChar: 22
       spanCodeSection: 'totalTime - '
-    - startInstruction: 1508
-      endInstruction: 1507
-      startSourceChar: 1789
-      endSourceChar: 1799
-      line: 84
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2277
+      endSourceChar: 2287
+      line: 100
       lineChar: 34
       spanCodeSection: 'minutes * '
-    - startInstruction: 1508
-      endInstruction: 1615
-      startSourceChar: 1799
-      endSourceChar: 1818
-      line: 84
+    - startInstruction: 1696
+      endInstruction: 1803
+      startSourceChar: 2287
+      endSourceChar: 2306
+      line: 100
       lineChar: 44
       spanCodeSection: "60;\r\n\r\n            "
-    - startInstruction: 1616
-      endInstruction: 1615
-      startSourceChar: 1818
-      endSourceChar: 1822
-      line: 86
+    - startInstruction: 1804
+      endInstruction: 1803
+      startSourceChar: 2306
+      endSourceChar: 2310
+      line: 102
       lineChar: 12
       spanCodeSection: if (
-    - startInstruction: 1616
-      endInstruction: 1615
-      startSourceChar: 1822
-      endSourceChar: 1838
-      line: 86
+    - startInstruction: 1804
+      endInstruction: 1803
+      startSourceChar: 2310
+      endSourceChar: 2326
+      line: 102
       lineChar: 16
       spanCodeSection: '(int)seconds != '
-    - startInstruction: 1616
-      endInstruction: 1615
-      startSourceChar: 1838
-      endSourceChar: 1843
-      line: 86
+    - startInstruction: 1804
+      endInstruction: 1803
+      startSourceChar: 2326
+      endSourceChar: 2331
+      line: 102
       lineChar: 32
       spanCodeSection: (int)
-    - startInstruction: 1616
-      endInstruction: 1751
-      startSourceChar: 1843
-      endSourceChar: 1864
-      line: 86
+    - startInstruction: 1804
+      endInstruction: 1939
+      startSourceChar: 2331
+      endSourceChar: 2352
+      line: 102
       lineChar: 37
       spanCodeSection: "oldSec)\r\n            "
-    - startInstruction: 1752
-      endInstruction: 1751
-      startSourceChar: 1864
-      endSourceChar: 1883
-      line: 87
+    - startInstruction: 1940
+      endInstruction: 1939
+      startSourceChar: 2352
+      endSourceChar: 2371
+      line: 103
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 1752
-      endInstruction: 1751
-      startSourceChar: 1883
-      endSourceChar: 1883
-      line: 88
+    - startInstruction: 1940
+      endInstruction: 1939
+      startSourceChar: 2371
+      endSourceChar: 2371
+      line: 104
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1752
-      endInstruction: 1751
-      startSourceChar: 1883
-      endSourceChar: 1900
-      line: 88
+    - startInstruction: 1940
+      endInstruction: 1939
+      startSourceChar: 2371
+      endSourceChar: 2388
+      line: 104
       lineChar: 16
       spanCodeSection: 'timerText.text = '
-    - startInstruction: 1752
-      endInstruction: 1751
-      startSourceChar: 1900
-      endSourceChar: 1931
-      line: 88
+    - startInstruction: 1940
+      endInstruction: 1939
+      startSourceChar: 2388
+      endSourceChar: 2419
+      line: 104
       lineChar: 33
       spanCodeSection: 'minutes.ToString("00") + ":" + '
-    - startInstruction: 1752
-      endInstruction: 1751
-      startSourceChar: 1931
-      endSourceChar: 1955
-      line: 88
+    - startInstruction: 1940
+      endInstruction: 1939
+      startSourceChar: 2419
+      endSourceChar: 2443
+      line: 104
       lineChar: 64
       spanCodeSection: ((int)seconds).ToString(
-    - startInstruction: 1752
-      endInstruction: 1947
-      startSourceChar: 1955
-      endSourceChar: 1990
-      line: 88
+    - startInstruction: 1940
+      endInstruction: 2135
+      startSourceChar: 2443
+      endSourceChar: 2478
+      line: 104
       lineChar: 88
       spanCodeSection: "\"00\");\r\n            }\r\n            "
-    - startInstruction: 1948
-      endInstruction: 1947
-      startSourceChar: 1990
-      endSourceChar: 1990
-      line: 90
+    - startInstruction: 2136
+      endInstruction: 2135
+      startSourceChar: 2478
+      endSourceChar: 2478
+      line: 106
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1948
-      endInstruction: 1947
-      startSourceChar: 1990
-      endSourceChar: 1999
-      line: 90
+    - startInstruction: 2136
+      endInstruction: 2135
+      startSourceChar: 2478
+      endSourceChar: 2487
+      line: 106
       lineChar: 12
       spanCodeSection: 'oldSec = '
-    - startInstruction: 1948
-      endInstruction: 1967
-      startSourceChar: 1999
-      endSourceChar: 2023
-      line: 90
+    - startInstruction: 2136
+      endInstruction: 2155
+      startSourceChar: 2487
+      endSourceChar: 2511
+      line: 106
       lineChar: 21
       spanCodeSection: "seconds;\r\n\r\n            "
-    - startInstruction: 1968
-      endInstruction: 1967
-      startSourceChar: 2023
-      endSourceChar: 2027
-      line: 92
+    - startInstruction: 2156
+      endInstruction: 2155
+      startSourceChar: 2511
+      endSourceChar: 2515
+      line: 108
       lineChar: 12
       spanCodeSection: if (
-    - startInstruction: 1968
-      endInstruction: 1967
-      startSourceChar: 2027
-      endSourceChar: 2040
-      line: 92
+    - startInstruction: 2156
+      endInstruction: 2155
+      startSourceChar: 2515
+      endSourceChar: 2528
+      line: 108
       lineChar: 16
       spanCodeSection: 'totalTime <= '
-    - startInstruction: 1968
-      endInstruction: 2015
-      startSourceChar: 2040
-      endSourceChar: 2057
-      line: 92
+    - startInstruction: 2156
+      endInstruction: 2203
+      startSourceChar: 2528
+      endSourceChar: 2545
+      line: 108
       lineChar: 29
       spanCodeSection: "0f)\r\n            "
-    - startInstruction: 2016
-      endInstruction: 2015
-      startSourceChar: 2057
-      endSourceChar: 2076
-      line: 93
+    - startInstruction: 2204
+      endInstruction: 2203
+      startSourceChar: 2545
+      endSourceChar: 2564
+      line: 109
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 2016
-      endInstruction: 2015
-      startSourceChar: 2076
-      endSourceChar: 2076
-      line: 94
+    - startInstruction: 2204
+      endInstruction: 2203
+      startSourceChar: 2564
+      endSourceChar: 2564
+      line: 110
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 2016
-      endInstruction: 2015
-      startSourceChar: 2076
-      endSourceChar: 2094
-      line: 94
+    - startInstruction: 2204
+      endInstruction: 2203
+      startSourceChar: 2564
+      endSourceChar: 2582
+      line: 110
       lineChar: 16
       spanCodeSection: 'timeUpText.text = '
-    - startInstruction: 2016
-      endInstruction: 2039
-      startSourceChar: 2094
-      endSourceChar: 2122
-      line: 94
+    - startInstruction: 2204
+      endInstruction: 2227
+      startSourceChar: 2582
+      endSourceChar: 2610
+      line: 110
       lineChar: 34
       spanCodeSection: "\"Time Up\";\r\n                "
-    - startInstruction: 2040
-      endInstruction: 2039
-      startSourceChar: 2122
-      endSourceChar: 2122
-      line: 95
+    - startInstruction: 2228
+      endInstruction: 2227
+      startSourceChar: 2610
+      endSourceChar: 2610
+      line: 111
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 2040
-      endInstruction: 2039
-      startSourceChar: 2122
-      endSourceChar: 2138
-      line: 95
+    - startInstruction: 2228
+      endInstruction: 2227
+      startSourceChar: 2610
+      endSourceChar: 2626
+      line: 111
       lineChar: 16
       spanCodeSection: 'isTimerActive = '
-    - startInstruction: 2040
-      endInstruction: 2059
-      startSourceChar: 2138
-      endSourceChar: 2212
-      line: 95
+    - startInstruction: 2228
+      endInstruction: 2247
+      startSourceChar: 2626
+      endSourceChar: 2700
+      line: 111
       lineChar: 32
       spanCodeSection: "false;\r\n                \r\n                // UI\u3092Activate\r\n
         \               "
-    - startInstruction: 2060
-      endInstruction: 2059
-      startSourceChar: 2212
-      endSourceChar: 2212
-      line: 98
+    - startInstruction: 2248
+      endInstruction: 2247
+      startSourceChar: 2700
+      endSourceChar: 2700
+      line: 114
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 2060
-      endInstruction: 2059
-      startSourceChar: 2212
-      endSourceChar: 2239
-      line: 98
+    - startInstruction: 2248
+      endInstruction: 2247
+      startSourceChar: 2700
+      endSourceChar: 2727
+      line: 114
       lineChar: 16
       spanCodeSection: 'startButton.interactable = '
-    - startInstruction: 2060
-      endInstruction: 2083
-      startSourceChar: 2239
-      endSourceChar: 2262
-      line: 98
+    - startInstruction: 2248
+      endInstruction: 2271
+      startSourceChar: 2727
+      endSourceChar: 2750
+      line: 114
       lineChar: 43
       spanCodeSection: "true;\r\n                "
-    - startInstruction: 2084
-      endInstruction: 2083
-      startSourceChar: 2262
-      endSourceChar: 2262
-      line: 99
+    - startInstruction: 2272
+      endInstruction: 2271
+      startSourceChar: 2750
+      endSourceChar: 2750
+      line: 115
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 2084
-      endInstruction: 2083
-      startSourceChar: 2262
-      endSourceChar: 2291
-      line: 99
+    - startInstruction: 2272
+      endInstruction: 2271
+      startSourceChar: 2750
+      endSourceChar: 2779
+      line: 115
       lineChar: 16
       spanCodeSection: 'minutesSlider.interactable = '
-    - startInstruction: 2084
-      endInstruction: 2107
-      startSourceChar: 2291
-      endSourceChar: 2314
-      line: 99
+    - startInstruction: 2272
+      endInstruction: 2295
+      startSourceChar: 2779
+      endSourceChar: 2802
+      line: 115
       lineChar: 45
       spanCodeSection: "true;\r\n                "
-    - startInstruction: 2108
-      endInstruction: 2107
-      startSourceChar: 2314
-      endSourceChar: 2314
-      line: 100
+    - startInstruction: 2296
+      endInstruction: 2295
+      startSourceChar: 2802
+      endSourceChar: 2802
+      line: 116
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 2108
-      endInstruction: 2107
-      startSourceChar: 2314
-      endSourceChar: 2343
-      line: 100
+    - startInstruction: 2296
+      endInstruction: 2295
+      startSourceChar: 2802
+      endSourceChar: 2831
+      line: 116
       lineChar: 16
       spanCodeSection: 'secondsSlider.interactable = '
-    - startInstruction: 2108
-      endInstruction: 2108
-      startSourceChar: 2343
-      endSourceChar: 2343
-      line: 100
+    - startInstruction: 2296
+      endInstruction: 2296
+      startSourceChar: 2831
+      endSourceChar: 2831
+      line: 116
       lineChar: 45
       spanCodeSection: 
   serializationData:
@@ -1879,7 +2260,7 @@ MonoBehaviour:
       Data: 2
     - Name: syncMode
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: symbolResolvedTypeName
       Entry: 1
       Data: SystemSingle
@@ -1900,7 +2281,13 @@ MonoBehaviour:
       Data: 15|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|UdonSharp.UdonSyncedAttribute, UdonSharp.Runtime
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1924,13 +2311,13 @@ MonoBehaviour:
       Data: isTimerActive
     - Name: $v
       Entry: 7
-      Data: 16|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 17|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 17|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 18|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 18|System.RuntimeType, mscorlib
+      Data: 19|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.Boolean, mscorlib
@@ -1939,10 +2326,10 @@ MonoBehaviour:
       Data: 
     - Name: declarationType
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: syncMode
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: symbolResolvedTypeName
       Entry: 1
       Data: SystemBoolean
@@ -1960,10 +2347,16 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 21|UdonSharp.UdonSyncedAttribute, UdonSharp.Runtime
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1987,13 +2380,13 @@ MonoBehaviour:
       Data: minutes
     - Name: $v
       Entry: 7
-      Data: 20|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 22|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 21|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 23|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 22|System.RuntimeType, mscorlib
+      Data: 24|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.Int32, mscorlib
@@ -2005,7 +2398,7 @@ MonoBehaviour:
       Data: 1
     - Name: syncMode
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: symbolResolvedTypeName
       Entry: 1
       Data: SystemInt32
@@ -2023,10 +2416,16 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 25|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 26|UdonSharp.UdonSyncedAttribute, UdonSharp.Runtime
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -2050,10 +2449,10 @@ MonoBehaviour:
       Data: seconds
     - Name: $v
       Entry: 7
-      Data: 24|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 27|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 25|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 28|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
       Data: 11
@@ -2062,7 +2461,7 @@ MonoBehaviour:
       Data: 1
     - Name: syncMode
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: symbolResolvedTypeName
       Entry: 1
       Data: SystemSingle
@@ -2080,10 +2479,16 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 30|UdonSharp.UdonSyncedAttribute, UdonSharp.Runtime
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -2107,13 +2512,13 @@ MonoBehaviour:
       Data: textObject
     - Name: $v
       Entry: 7
-      Data: 27|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 31|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 28|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 32|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 29|System.RuntimeType, mscorlib
+      Data: 33|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: UnityEngine.GameObject, UnityEngine.CoreModule
@@ -2143,7 +2548,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 30|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 34|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -2170,13 +2575,13 @@ MonoBehaviour:
       Data: timeUpNoticeTextObj
     - Name: $v
       Entry: 7
-      Data: 31|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 35|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 32|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 36|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
-      Data: 29
+      Data: 33
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -2192,69 +2597,6 @@ MonoBehaviour:
     - Name: symbolUniqueName
       Entry: 1
       Data: timeUpNoticeTextObj
-    - Name: symbolDefaultValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: fieldAttributes
-      Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: userBehaviourSource
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: minutesSlider
-    - Name: $v
-      Entry: 7
-      Data: 34|UdonSharp.FieldDefinition, UdonSharp.Editor
-    - Name: fieldSymbol
-      Entry: 7
-      Data: 35|UdonSharp.SymbolDefinition, UdonSharp.Editor
-    - Name: internalType
-      Entry: 7
-      Data: 36|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: UnityEngine.UI.Slider, UnityEngine.UI
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: declarationType
-      Entry: 3
-      Data: 1
-    - Name: syncMode
-      Entry: 3
-      Data: 0
-    - Name: symbolResolvedTypeName
-      Entry: 1
-      Data: UnityEngineUISlider
-    - Name: symbolOriginalName
-      Entry: 1
-      Data: minutesSlider
-    - Name: symbolUniqueName
-      Entry: 1
-      Data: minutesSlider
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -2287,7 +2629,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: secondsSlider
+      Data: minutesSlider
     - Name: $v
       Entry: 7
       Data: 38|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -2295,8 +2637,71 @@ MonoBehaviour:
       Entry: 7
       Data: 39|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
+      Entry: 7
+      Data: 40|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.Slider, UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUISlider
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: minutesSlider
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: minutesSlider
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 41|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: secondsSlider
+    - Name: $v
+      Entry: 7
+      Data: 42|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 43|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
       Entry: 9
-      Data: 36
+      Data: 40
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -2320,7 +2725,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 40|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 44|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -2347,13 +2752,13 @@ MonoBehaviour:
       Data: startButton
     - Name: $v
       Entry: 7
-      Data: 41|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 45|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 42|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 46|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 43|System.RuntimeType, mscorlib
+      Data: 47|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: UnityEngine.UI.Button, UnityEngine.UI
@@ -2383,7 +2788,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 44|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 48|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0

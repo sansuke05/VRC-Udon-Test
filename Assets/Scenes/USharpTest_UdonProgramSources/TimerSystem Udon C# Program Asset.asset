@@ -824,7 +824,7 @@ MonoBehaviour:
       line: 38
       lineChar: 54
       spanCodeSection: "Text>();\r\n    }\r\n\r\n\r\n    ///<summary>\r\n    ///Button.OnClick\u3067\u547C\u3070\u308C\u308B\r\n
-        \   ///<summary/>\r\n    "
+        \   ///</summary>\r\n    "
     - startInstruction: 332
       endInstruction: 351
       startSourceChar: 849

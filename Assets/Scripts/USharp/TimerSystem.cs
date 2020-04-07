@@ -42,7 +42,7 @@ public class TimerSystem : UdonSharpBehaviour
 
     ///<summary>
     ///Button.OnClickで呼ばれる
-    ///<summary/>
+    ///</summary>
     public override void Interact()
     {
         var minAndSec = timerText.text.Split(':');
