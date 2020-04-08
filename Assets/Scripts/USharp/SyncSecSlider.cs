@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class SyncMinSlider : UdonSharpBehaviour
+public class SyncSecSlider : UdonSharpBehaviour
 {
     [UdonSynced(UdonSyncMode.None)]
-    float minutes = 0;
+    float seconds = 0;
 
     public Text timerText;
 
-    public Slider minutesSlider;
+    public Slider secondsSlider;
 
 
     public override void Interact()
@@ -22,24 +22,24 @@ public class SyncMinSlider : UdonSharpBehaviour
             Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
         }
 
-        minutes = minutesSlider.value;
+        seconds = secondsSlider.value;
     }
 
     void Update()
     {
-        minutesSlider.value = minutes;
+        secondsSlider.value = seconds;
         
-        var min = (int)minutes;
-        var minStr = "";
-        var secStr = (timerText.text.Split(':'))[1];
+        var sec = (int)seconds;
+        var minStr = (timerText.text.Split(':'))[0];
+        var secStr = "";
 
-        if (min < 10)
+        if (sec < 10)
         {
-            minStr = "0" + min.ToString();
+            secStr = "0" + sec.ToString();
         }
         else
         {
-            minStr = min.ToString();
+            secStr = sec.ToString();
         }
 
         timerText.text = minStr + ":" + secStr;

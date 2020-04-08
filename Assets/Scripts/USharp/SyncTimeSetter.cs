@@ -53,9 +53,16 @@ public class SyncTimeSetter : UdonSharpBehaviour
             Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
         }
 
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetTime");
+    }
+
+
+    public void SetTime()
+    {
         minutes = minutesSlider.value;
         seconds = secondsSlider.value;
     }
+
 
     void Update()
     {
