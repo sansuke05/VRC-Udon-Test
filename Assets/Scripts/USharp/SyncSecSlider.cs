@@ -10,6 +10,8 @@ public class SyncSecSlider : UdonSharpBehaviour
     [UdonSynced(UdonSyncMode.None)]
     float seconds = 0;
 
+    public GameObject timerSystem;
+
     public Text timerText;
 
     public Slider secondsSlider;
@@ -27,6 +29,14 @@ public class SyncSecSlider : UdonSharpBehaviour
 
     void Update()
     {
+        var timer = (UdonBehaviour) timerSystem.GetComponent(typeof(UdonBehaviour));
+        var isTimerActive = (bool) timer.GetProgramVariable("isTimerActive");
+
+        if (isTimerActive)
+        {
+            return;
+        }
+
         secondsSlider.value = seconds;
         
         var sec = (int)seconds;

@@ -23,7 +23,7 @@ public class TimerSystem : UdonSharpBehaviour
 
     public GameObject textObject;
 
-    public GameObject timeUpNoticeTextObj;
+    public GameObject timeUpNoticeTextObject;
 
     public Slider minutesSlider;
 
@@ -36,7 +36,7 @@ public class TimerSystem : UdonSharpBehaviour
         totalTime = minutes * 60 + seconds;
         oldSec = 0;
         timerText = textObject.GetComponent<Text>();
-        timeUpText = timeUpNoticeTextObj.GetComponent<Text>();
+        timeUpText = timeUpNoticeTextObject.GetComponent<Text>();
     }
 
 

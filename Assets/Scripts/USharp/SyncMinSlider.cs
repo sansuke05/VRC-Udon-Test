@@ -10,6 +10,8 @@ public class SyncMinSlider : UdonSharpBehaviour
     [UdonSynced(UdonSyncMode.None)]
     float minutes = 0;
 
+    public GameObject timerSystem;
+
     public Text timerText;
 
     public Slider minutesSlider;
@@ -27,6 +29,14 @@ public class SyncMinSlider : UdonSharpBehaviour
 
     void Update()
     {
+        var timer = (UdonBehaviour) timerSystem.GetComponent(typeof(UdonBehaviour));
+        var isTimerActive = (bool) timer.GetProgramVariable("isTimerActive");
+
+        if (isTimerActive)
+        {
+            return;
+        }
+
         minutesSlider.value = minutes;
         
         var min = (int)minutes;

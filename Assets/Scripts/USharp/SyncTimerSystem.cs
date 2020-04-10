@@ -7,32 +7,30 @@ using VRC.Udon;
 
 public class SyncTimerSystem : UdonSharpBehaviour
 {
-    private Text timerText;
+    //[UdonSynced(UdonSyncMode.None)]
+    float totalTime;
 
-    private Text timeUpText;
+    //[UdonSynced(UdonSyncMode.None)]
+    float oldSec;
 
-    [UdonSynced(UdonSyncMode.None)]
-    private float totalTime;
+    //[UdonSynced(UdonSyncMode.None)]
+    int minutes;
+    
+    //[UdonSynced(UdonSyncMode.None)]
+    float seconds;
 
-    [UdonSynced(UdonSyncMode.None)]
-    private float oldSec;
-
-    [UdonSynced(UdonSyncMode.None)]
+    //[UdonSynced(UdonSyncMode.None)]
     public bool isTimerActive;
 
-    [UdonSynced(UdonSyncMode.None)]
-    public int minutes;
-    
-    [UdonSynced(UdonSyncMode.None)]
-    public float seconds;
-
-    public GameObject textObject;
-
-    public GameObject timeUpNoticeTextObj;
+    public GameObject startButtonObject;
 
     public Slider minutesSlider;
 
     public Slider secondsSlider;
+    
+    public Text timerText;
+
+    public Text timeUpText;
 
     public Button startButton;
 
@@ -40,8 +38,6 @@ public class SyncTimerSystem : UdonSharpBehaviour
     {
         totalTime = minutes * 60 + seconds;
         oldSec = 0;
-        timerText = textObject.GetComponent<Text>();
-        timeUpText = timeUpNoticeTextObj.GetComponent<Text>();
     }
 
 
@@ -50,9 +46,9 @@ public class SyncTimerSystem : UdonSharpBehaviour
     ///</summary>
     public override void Interact()
     {
-        if(Networking.GetOwner(this.gameObject) != Networking.LocalPlayer)
+        if(Networking.GetOwner(startButtonObject) != Networking.LocalPlayer)
         {
-            Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
+            Networking.SetOwner(Networking.LocalPlayer, startButtonObject);
         }
 
         //処理同期

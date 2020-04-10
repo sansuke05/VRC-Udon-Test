@@ -47,6 +47,8 @@ Assets/Audio/*
 Assets/Audio.meta
 Assets/TUShooting/
 Assets/TUShooting.meta
+Assets/WorldAssets/Textures/
+Assets/WorldAssets/Textures.meta
 
 # VRC Assets
 Assets/Udon/
