@@ -301,6 +301,13 @@ namespace UdonSharp
             visitorContext.PopTable();
         }
 
+        public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+        {
+            UpdateSyntaxNode(node);
+
+            throw new System.NotSupportedException("UdonSharp does not currently support constructors on UdonSharpBehaviours, use the Start() event to initialize instead.");
+        }
+
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
             UpdateSyntaxNode(node);
@@ -1066,6 +1073,8 @@ namespace UdonSharp
                         operatorMethods.AddRange(GetOperators(operandCapture.GetReturnType(), node.OperatorToken.Kind()));
                         operatorMethods.AddRange(GetImplicitHigherPrecisionOperator(operandCapture.GetReturnType(), null, SyntaxKindToBuiltinOperator(node.OperatorToken.Kind()), true));
                         break;
+                    case SyntaxKind.TildeToken:
+                        throw new System.NotSupportedException("Udon does not support BitwiseNot at the moment (https://vrchat.canny.io/vrchat-udon-closed-alpha-feedback/p/bitwisenot-for-integer-built-in-types)");
                     default:
                         throw new System.NotImplementedException($"Handling for prefix token {node.OperatorToken.Kind()} is not implemented");
                 }
@@ -1544,6 +1553,12 @@ namespace UdonSharp
         {
             UpdateSyntaxNode(node);
 
+            if (node.Kind() == SyntaxKind.IsExpression)
+                throw new System.NotSupportedException("The `is` keyword is not yet supported by UdonSharp since Udon does not expose what is necessary (https://vrchat.canny.io/vrchat-udon-closed-alpha-feedback/p/expose-systemtypeissubclassof-isinstanceoftype-issubclassof-and-basetype)");
+
+            if (node.Kind() == SyntaxKind.AsExpression)
+                throw new System.NotSupportedException("The `as` keyword is not yet supported by UdonSharp since Udon does not expose what is necessary (https://vrchat.canny.io/vrchat-udon-closed-alpha-feedback/p/expose-systemtypeissubclassof-isinstanceoftype-issubclassof-and-basetype)");
+
             if (node.Kind() == SyntaxKind.LogicalAndExpression || node.Kind() == SyntaxKind.LogicalOrExpression)
             {
                 HandleBinaryShortCircuitConditional(node);
@@ -1559,20 +1574,35 @@ namespace UdonSharp
             SymbolDefinition rhsValue = null;
             SymbolDefinition lhsValue = null;
 
-            using (ExpressionCaptureScope rhsCapture = new ExpressionCaptureScope(visitorContext, null))
-            {
-                Visit(node.Right);
-
-                rhsValue = rhsCapture.ExecuteGet();
-            }
-
             ExpressionCaptureScope outerScope = visitorContext.topCaptureScope;
 
             using (ExpressionCaptureScope lhsCapture = new ExpressionCaptureScope(visitorContext, null))
             {
                 Visit(node.Left);
 
-                lhsValue = lhsCapture.ExecuteGet();
+                if (lhsCapture.DoesReturnIntermediateSymbol() || lhsCapture.IsConstExpression())
+                {
+                    lhsValue = lhsCapture.ExecuteGet();
+                }
+                else
+                {
+                    // This needs to be copied because someone can do an in place assignment operator on the rhs that changes the lhs value
+                    SymbolDefinition lhsCopy = visitorContext.topTable.CreateUnnamedSymbol(lhsCapture.GetReturnType(true), SymbolDeclTypeFlags.Internal);
+                    using (ExpressionCaptureScope lhsCopySetter = new ExpressionCaptureScope(visitorContext, null))
+                    {
+                        lhsCopySetter.SetToLocalSymbol(lhsCopy);
+                        lhsCopySetter.ExecuteSetDirect(lhsCapture);
+                    }
+
+                    lhsValue = lhsCopy;
+                }
+
+                using (ExpressionCaptureScope rhsCapture = new ExpressionCaptureScope(visitorContext, null))
+                {
+                    Visit(node.Right);
+
+                    rhsValue = rhsCapture.ExecuteGet();
+                }
 
                 System.Type lhsType = lhsValue.symbolCsType;
                 System.Type rhsType = rhsValue.symbolCsType;
@@ -2175,6 +2205,16 @@ namespace UdonSharp
                     SwitchLabelSyntax switchLabel = switchSection.Labels[j];
                     SymbolDefinition switchLabelValue = null;
 
+                    if (switchLabel is DefaultSwitchLabelSyntax)
+                    {
+                        UpdateSyntaxNode(switchLabel);
+                        defaultJump = sectionJump;
+                        continue;
+                    }
+
+                    visitorContext.uasmBuilder.AddJumpLabel(nextLabelJump);
+                    nextLabelJump = visitorContext.labelTable.GetNewJumpLabel("nextSwitchLabelJump");
+
                     using (ExpressionCaptureScope conditionValueCapture = new ExpressionCaptureScope(visitorContext, null))
                     {
                         Visit(switchLabel);
@@ -2182,15 +2222,6 @@ namespace UdonSharp
                         if (!conditionValueCapture.IsUnknownArchetype())
                             switchLabelValue = conditionValueCapture.ExecuteGet();
                     }
-
-                    if (switchLabelValue == null)
-                    {
-                        defaultJump = sectionJump;
-                        continue;
-                    }
-
-                    visitorContext.uasmBuilder.AddJumpLabel(nextLabelJump);
-                    nextLabelJump = visitorContext.labelTable.GetNewJumpLabel("nextSwitchLabelJump");
 
                     SymbolDefinition conditionEqualitySymbol = null;
                     using (ExpressionCaptureScope equalityCheckScope = new ExpressionCaptureScope(visitorContext, null))
@@ -2227,12 +2258,6 @@ namespace UdonSharp
 
             visitorContext.uasmBuilder.AddJumpLabel(switchExitLabel);
             visitorContext.breakLabelStack.Pop();
-        }
-
-        public override void VisitDefaultSwitchLabel(DefaultSwitchLabelSyntax node)
-        {
-            // Just do nothing here so the outer scope is unknown type
-            UpdateSyntaxNode(node);
         }
 
         public override void VisitCaseSwitchLabel(CaseSwitchLabelSyntax node)
