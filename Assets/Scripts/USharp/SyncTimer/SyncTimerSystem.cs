@@ -5,29 +5,27 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class TimerSystem : UdonSharpBehaviour
+public class SyncTimerSystem : UdonSharpBehaviour
 {
-    private Text timerText;
+    float totalTime;
 
-    private Text timeUpText;
+    float oldSec;
 
-    private float totalTime;
-
-    private float oldSec;
-
-    private bool isTimerActive;
-
-    public int minutes;
+    int minutes;
     
-    public float seconds;
+    float seconds;
 
-    public GameObject textObject;
+    public bool isTimerActive;
 
-    public GameObject timeUpNoticeTextObject;
+    public GameObject startButtonObject;
 
     public Slider minutesSlider;
 
     public Slider secondsSlider;
+    
+    public Text timerText;
+
+    public Text timeUpText;
 
     public Button startButton;
 
@@ -35,8 +33,6 @@ public class TimerSystem : UdonSharpBehaviour
     {
         totalTime = minutes * 60 + seconds;
         oldSec = 0;
-        timerText = textObject.GetComponent<Text>();
-        timeUpText = timeUpNoticeTextObject.GetComponent<Text>();
     }
 
 
@@ -44,6 +40,18 @@ public class TimerSystem : UdonSharpBehaviour
     ///Button.OnClickで呼ばれる
     ///</summary>
     public override void Interact()
+    {
+        if(Networking.GetOwner(startButtonObject) != Networking.LocalPlayer)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, startButtonObject);
+        }
+
+        //処理同期
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnStartTimer");
+    }
+
+
+    public void OnStartTimer()
     {
         var minAndSec = timerText.text.Split(':');
         minutes = int.Parse(minAndSec[0]);
@@ -62,7 +70,10 @@ public class TimerSystem : UdonSharpBehaviour
         isTimerActive = true;
 
         // UI更新
-        timeUpText.text = "";
+        if (timeUpText != null)
+        {
+            timeUpText.text = "";
+        }
         startButton.interactable = false;
         minutesSlider.interactable = false;
         secondsSlider.interactable = false;
@@ -92,7 +103,10 @@ public class TimerSystem : UdonSharpBehaviour
 
             if (totalTime <= 0f)
             {
-                timeUpText.text = "Time Up";
+                if (timeUpText != null) // TimeUpTestがセットされていればTime Up表示
+                {
+                    timeUpText.text = "Time Up";
+                }
                 isTimerActive = false;
                 
                 // UIをActivate

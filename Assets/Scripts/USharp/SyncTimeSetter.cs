@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
+///<summary>
+/// This class is not used.
+///</summary>
 public class SyncTimeSetter : UdonSharpBehaviour
 {
     // 同期用変数

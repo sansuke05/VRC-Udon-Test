@@ -43,6 +43,8 @@ Assets/StreamingAssets/crashlytics-build.properties
 .vscode/
 
 # private Assets
+Assets/753network/
+Assets/753network.meta
 Assets/Audio/*
 Assets/Audio.meta
 Assets/TUShooting/
