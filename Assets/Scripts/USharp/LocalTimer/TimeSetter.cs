@@ -7,6 +7,12 @@ using VRC.Udon;
 
 public class TimeSetter : UdonSharpBehaviour
 {
+    float minutes = 0;
+
+    float seconds = 0;
+
+    public GameObject timerSystem;
+
     public Text timerText;
 
     public Slider minutesSlider;
@@ -15,8 +21,25 @@ public class TimeSetter : UdonSharpBehaviour
 
     public override void Interact()
     {
-        var min = (int)(minutesSlider.value);
-        var sec = (int)(secondsSlider.value);
+        minutes = minutesSlider.value;
+        seconds = secondsSlider.value;
+    }
+
+    void Update()
+    {
+        var timer = (UdonBehaviour)timerSystem.GetComponent(typeof(UdonBehaviour));
+        var isTimerActive = (bool)timer.GetProgramVariable("isTimerActive");
+
+        if (isTimerActive)
+        {
+            return;
+        }
+
+        minutesSlider.value = minutes;
+        secondsSlider.value = seconds;
+
+        var min = (int)minutes;
+        var sec = (int)seconds;
         var minStr = "";
         var secStr = "";
 

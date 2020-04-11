@@ -12,10 +12,12 @@ public class TimerSystem : UdonSharpBehaviour
     float oldSec;
 
     int minutes;
-    
+
     float seconds;
 
     bool isTimerActive;
+
+    bool isTimerPause;
 
     public Slider minutesSlider;
 
@@ -27,17 +29,23 @@ public class TimerSystem : UdonSharpBehaviour
 
     public Button startButton;
 
+    public Button stopButton;
+
+    public Button resetButton;
+
     void Start()
     {
         totalTime = minutes * 60 + seconds;
         oldSec = 0;
+        stopButton.interactable = false;
+        resetButton.interactable = false;
     }
 
 
     ///<summary>
-    ///Button.OnClickで呼ばれる
+    ///Startボタンクリックイベント
     ///</summary>
-    public override void Interact()
+    public void OnStartClicked()
     {
         var minAndSec = timerText.text.Split(':');
         minutes = int.Parse(minAndSec[0]);
@@ -48,6 +56,10 @@ public class TimerSystem : UdonSharpBehaviour
         if (minutes <= 0 && seconds <= 0.01)
         {
             return;
+        }
+        if (isTimerPause) // 一時停止状態から復帰した場合
+        {
+            isTimerPause = false;
         }
 
         totalTime = minutes * 60 + seconds;
@@ -61,45 +73,71 @@ public class TimerSystem : UdonSharpBehaviour
             timeUpText.text = "";
         }
         startButton.interactable = false;
+        stopButton.interactable = true;
+        resetButton.interactable = true;
         minutesSlider.interactable = false;
         secondsSlider.interactable = false;
     }
 
 
+    ///<summary>
+    ///Stopボタンクリックイベント
+    ///</summary>
+    public void OnStopClicked()
+    {
+        isTimerPause = true;
+        startButton.interactable = true;
+        stopButton.interactable = false;
+    }
+
+
+    ///<summary>
+    ///Resetボタンクリックイベント
+    ///</summary>
+    public void OnResetClicked()
+    {
+        isTimerActive = false;
+        startButton.interactable = true;
+        stopButton.interactable = false;
+        resetButton.interactable = false;
+        minutesSlider.interactable = true;
+        secondsSlider.interactable = true;
+    }
+
+
     void Update()
     {
-        if (totalTime <= 0)
+        if (totalTime <= 0 || !isTimerActive || isTimerPause)
         {
             return;
         }
 
-        if (isTimerActive)
+        totalTime = minutes * 60 + seconds;
+        totalTime -= Time.deltaTime;
+
+        minutes = (int)totalTime / 60;
+        seconds = totalTime - minutes * 60;
+
+        if ((int)seconds != (int)oldSec)
         {
-            totalTime = minutes * 60 + seconds;
-            totalTime -= Time.deltaTime;
+            timerText.text = minutes.ToString("00") + ":" + ((int)seconds).ToString("00");
+        }
+        oldSec = seconds;
 
-            minutes = (int)totalTime / 60;
-            seconds = totalTime - minutes * 60;
-
-            if ((int)seconds != (int)oldSec)
+        if (totalTime <= 0f)
+        {
+            if (timeUpText != null) // TimeUpTestがセットされていればTime Up表示
             {
-                timerText.text = minutes.ToString("00") + ":" + ((int)seconds).ToString("00");
+                timeUpText.text = "Time Up";
             }
-            oldSec = seconds;
+            isTimerActive = false;
 
-            if (totalTime <= 0f)
-            {
-                if (timeUpText != null) // TimeUpTestがセットされていればTime Up表示
-                {
-                    timeUpText.text = "Time Up";
-                }
-                isTimerActive = false;
-                
-                // UIをActivate
-                startButton.interactable = true;
-                minutesSlider.interactable = true;
-                secondsSlider.interactable = true;
-            }
+            // UIを更新
+            startButton.interactable = true;
+            stopButton.interactable = false;
+            resetButton.interactable = false;
+            minutesSlider.interactable = true;
+            secondsSlider.interactable = true;
         }
     }
 }
