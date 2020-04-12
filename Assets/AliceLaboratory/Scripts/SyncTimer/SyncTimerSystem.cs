@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class TimerSystem : UdonSharpBehaviour
+public class SyncTimerSystem : UdonSharpBehaviour
 {
     float totalTime;
 
@@ -15,9 +15,15 @@ public class TimerSystem : UdonSharpBehaviour
 
     float seconds;
 
-    bool isTimerActive;
-
     bool isTimerPause;
+
+    public bool isTimerActive;
+
+    public GameObject startButtonObject;
+
+    public GameObject stopButtonObject;
+
+    public GameObject resetButtonObject;
 
     public Slider minutesSlider;
 
@@ -33,6 +39,12 @@ public class TimerSystem : UdonSharpBehaviour
 
     public Button resetButton;
 
+    public AudioSource alarm;
+
+
+    ///<summary>
+    /// Unity Start
+    ///</summary>
     void Start()
     {
         totalTime = minutes * 60 + seconds;
@@ -47,6 +59,49 @@ public class TimerSystem : UdonSharpBehaviour
     ///</summary>
     public void OnStartClicked()
     {
+        if (Networking.GetOwner(startButtonObject) != Networking.LocalPlayer)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, startButtonObject);
+        }
+
+        //処理同期
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnStart");
+    }
+
+
+    ///<summary>
+    ///Stopボタンクリックイベント
+    ///</summary>
+    public void OnStopClicked()
+    {
+        if (Networking.GetOwner(stopButtonObject) != Networking.LocalPlayer)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, stopButtonObject);
+        }
+
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnStop");
+    }
+
+
+    ///<summary>
+    ///Resetボタンクリックイベント
+    ///</summary>
+    public void OnResetClicked()
+    {
+        if (Networking.GetOwner(resetButtonObject) != Networking.LocalPlayer)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, resetButtonObject);
+        }
+
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnReset");
+    }
+
+
+    ///<summary>
+    ///Startボタンクリック後の処理(ネットワークイベント)
+    ///</summary>
+    public void OnStart()
+    {
         var minAndSec = timerText.text.Split(':');
         minutes = int.Parse(minAndSec[0]);
         seconds = float.Parse(minAndSec[1]);
@@ -57,6 +112,7 @@ public class TimerSystem : UdonSharpBehaviour
         {
             return;
         }
+
         if (isTimerPause) // 一時停止状態から復帰した場合
         {
             isTimerPause = false;
@@ -81,9 +137,9 @@ public class TimerSystem : UdonSharpBehaviour
 
 
     ///<summary>
-    ///Stopボタンクリックイベント
+    /// Stopボタンクリック後の処理(ネットワークイベント)
     ///</summary>
-    public void OnStopClicked()
+    public void OnStop()
     {
         isTimerPause = true;
         startButton.interactable = true;
@@ -92,9 +148,9 @@ public class TimerSystem : UdonSharpBehaviour
 
 
     ///<summary>
-    ///Resetボタンクリックイベント
+    /// Resetボタンクリック後の処理(ネットワークイベント)
     ///</summary>
-    public void OnResetClicked()
+    public void OnReset()
     {
         isTimerActive = false;
         startButton.interactable = true;
@@ -105,6 +161,9 @@ public class TimerSystem : UdonSharpBehaviour
     }
 
 
+    ///<summary>
+    /// Unity Update
+    ///</summary>
     void Update()
     {
         if (totalTime <= 0 || !isTimerActive || isTimerPause)
@@ -126,13 +185,19 @@ public class TimerSystem : UdonSharpBehaviour
 
         if (totalTime <= 0f)
         {
+            isTimerActive = false;
+
+            // アラームがセットされていれば再生
+            if (alarm != null)
+            {
+                alarm.Play();
+            }
+
+            // UIを更新
             if (timeUpText != null) // TimeUpTestがセットされていればTime Up表示
             {
                 timeUpText.text = "Time Up";
             }
-            isTimerActive = false;
-
-            // UIを更新
             startButton.interactable = true;
             stopButton.interactable = false;
             resetButton.interactable = false;
